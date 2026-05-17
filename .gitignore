@@ -1,0 +1,33 @@
+# Environment
+.env
+
+# Data
+data/raw/
+data/edss/
+data/processed/*.csv
+
+# Generated outputs and model artifacts
+outputs/figures/
+outputs/maps/
+outputs/reports/
+outputs/models/*.pkl
+
+# Archived history snapshots
+archive/
+
+# Matplotlib cache
+.matplotlib/
+outputs/.matplotlib/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

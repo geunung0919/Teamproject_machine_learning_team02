@@ -1,0 +1,7 @@
+pandas==3.0.3
+numpy==2.4.4
+scikit-learn==1.8.0
+folium==0.20.0
+matplotlib==3.10.9
+joblib==1.5.3
+requests==2.34.2

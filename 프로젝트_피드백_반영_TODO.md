@@ -1,11 +1,11 @@
-# 프로젝트 피드백 반영 TODO
+﻿# 프로젝트 피드백 반영 TODO
 
 기준 파일: `C:\Users\wltjd\Downloads\프로젝트_분석_피드백.md`
 
 ## 반영 완료
 
 - [x] 회귀모델 baseline 비교 추가
-  - 파일: `src/final_national_training_pipeline.py`
+  - 파일: `src/models/final_national_training_pipeline.py`
   - 산출물: `outputs/reports/final_national_population_regression_metrics.csv`
   - 추가 항목: `baseline_previous_year_population`
   - 의미: “올해 학령인구를 내년에도 그대로 유지한다”는 naive baseline과 ML 모델을 비교할 수 있게 함
@@ -34,19 +34,19 @@
   - `outputs/reports/final_special_school_review_2026_2040.csv`
 
 - [x] 위험등급 임계값 민감도 분석 추가
-  - 파일: `src/analyze_risk_threshold_sensitivity.py`
+  - 파일: `src/reports/analyze_risk_threshold_sensitivity.py`
   - 산출물: `outputs/reports/risk_threshold_sensitivity.csv`
   - 분석: 2029/2035/2040년 기준 고립도 60/70/80, 상권·지역감소 60/70/80 조합별 고위험 학교 수 변화
 
 - [x] 학교 반경 기반 상권 피처 생성
-  - 파일: `src/build_school_radius_commercial_features.py`
+  - 파일: `src/features/build_school_radius_commercial_features.py`
   - 산출물: `data/processed/school_radius_commercial_features.csv`
   - 요약: `outputs/reports/school_radius_commercial_feature_summary.csv`
   - 반경: 500m, 1km, 2km
   - 업종: 전체, 교육, 아동/키즈, 의료
 
 - [x] 학교급별 코호트 이동 시나리오 추가
-  - 파일: `src/build_school_level_cohort_scenario.py`
+  - 파일: `src/models/build_school_level_cohort_scenario.py`
   - 산출물: `data/processed/school_level_cohort_scenario_2026_2040.csv`
   - 요약: `outputs/reports/school_level_cohort_scenario_total_summary.csv`
   - 방식: 초등/중등/고등별 출생연도 코호트 합계 비교
@@ -111,7 +111,7 @@
 ## 2차 피드백 반영 체크
 
 - [x] 학교 반경 1km 상권 피처를 최종 위험 산식에 반영
-  - `src/final_national_training_pipeline.py`
+  - `src/models/final_national_training_pipeline.py`
   - `outputs/reports/commercial_vulnerability_score_distribution.csv`
 - [x] 회귀모델 변화량 타깃 실험 추가
   - `outputs/reports/final_national_population_regression_metrics.csv`
@@ -119,19 +119,19 @@
 - [x] 시군구 규모별 회귀 성능 분리 보고 추가
   - `outputs/reports/regression_performance_by_sgg_size.csv`
 - [x] 코호트 시나리오에 지역별 순이동 보정 추가
-  - `src/build_school_level_cohort_scenario.py`
+  - `src/models/build_school_level_cohort_scenario.py`
   - `outputs/reports/school_level_cohort_scenario_total_summary.csv`
 - [x] 기존 시군구 압력비 모델과 출생 코호트 모델 비교 시각화 추가
-  - `src/generate_comparison_chart.py`
+  - `src/reports/generate_comparison_chart.py`
   - `outputs/figures/model_vs_cohort_comparison.png`
   - `outputs/reports/model_vs_cohort_comparison.csv`
 - [x] 최종 HTML 지도 재생성
   - `outputs/maps/final_national_interactive_school_risk_scenario.html`
 - [x] 출생 코호트 기준 학생수를 최종 위험등급 산식에 적용
-  - `src/apply_cohort_scenario_to_risk.py`
+  - `src/models/apply_cohort_scenario_to_risk.py`
   - `outputs/reports/cohort_applied_risk_summary_2026_2040.csv`
 - [x] 현재 학교 적용용 supervised 피처 결측 일부 보완
-  - `src/final_supervised_training.py`
+  - `src/models/final_supervised_training.py`
   - `outputs/reports/final_supervised_current_feature_missing_rate.csv`
 - [x] 회귀/분류 베이스모델 vs 튜닝모델 비교 산출물 생성
   - 회귀: 전년 유지/Ridge vs RandomForest
@@ -150,18 +150,18 @@
 ## 3차 피드백 반영 TODO
 
 - [x] 분류모델 현재학교 추론 피처 100% 결측 완화
-  - 수정 파일: `src/final_supervised_training.py`
+  - 수정 파일: `src/models/final_supervised_training.py`
   - `entrants`, `graduates`: 학교급별 학생수 기반 추정
   - `student_growth_1yr`, `land_area`, `playground_area`, `regular_classrooms`: EDSS 2023 시도/학교급 중앙값 fallback
   - 결과 리포트: `outputs/reports/final_supervised_current_feature_missing_rate.csv`
 
 - [x] 변화량 타깃 회귀모델 피처 중요도 차트 생성
-  - 수정 파일: `src/extract_model_feature_importance.py`
+  - 수정 파일: `src/reports/extract_model_feature_importance.py`
   - 그림: `outputs/figures/change_target_regression_feature_importance.png`
   - 핵심 피처: 15~19세 인구, 순이동 인구, 전출 인구
 
 - [x] 시간 기반 교차검증 추가
-  - 수정 파일: `src/final_national_training_pipeline.py`
+  - 수정 파일: `src/models/final_national_training_pipeline.py`
   - 방식: expanding window
   - 결과: `outputs/reports/regression_time_cv_results.csv`
 
@@ -170,9 +170,69 @@
   - `.gitignore`
 
 - [x] 최종 지도 HTML 재생성
-  - 코호트 시나리오 재적용: `src/apply_cohort_scenario_to_risk.py`
+  - 코호트 시나리오 재적용: `src/models/apply_cohort_scenario_to_risk.py`
   - 최종 HTML: `outputs/maps/final_national_interactive_school_risk_scenario.html`
 
 - [ ] 현재학교 상세 API에서 실제 입학생/졸업생/부지면적 원자료 추가 확보
   - 현재는 추정/fallback으로 결측을 줄인 상태
   - 실제 원자료 확보 시 supervised 현재학교 적용 신뢰도 개선 가능
+
+## 4차 지도 UI/산식 정리 TODO
+
+- [x] 위험 피처 선택 체크박스에서만 EDSS 제외
+  - 수정 파일: `src/project_config.py`
+  - 수정 파일: `src/models/apply_cohort_scenario_to_risk.py`
+  - 수정 파일: `src/models/final_national_training_pipeline.py`
+  - 수정 파일: `src/viz/build_final_interactive_school_risk_map.py`
+  - EDSS는 위험점수 고정 가산항목으로 유지
+  - 사용자가 임의로 끄고 켜는 체크박스에서만 제외
+
+- [x] 최종 코호트 시나리오에 EDSS 제외 산식 재적용
+  - 실행 파일: `src/models/apply_cohort_scenario_to_risk.py`
+  - 변경 행: `15,273 / 182,160`
+  - 결과 파일: `data/processed/final_national_school_scenario_2026_2040.csv`
+
+- [x] 표시단위별 범례 분리
+  - 학교별 점: 위험등급 범례만 표시
+  - 시군구 감소: 시군구 학생수 감소 범례만 표시
+  - 자동 전환에서도 현재 표시단위에 맞춰 범례 변경
+
+- [x] 최종 지도 HTML 재생성
+  - 최종 HTML: `outputs/maps/final_national_interactive_school_risk_scenario.html`
+
+## 5차 피처명/보호군 모델 개선 TODO
+
+- [x] `지역감소위험` 용어를 `학령수요 감소압력`으로 변경
+  - 상대점수라는 성격을 명확히 하기 위한 표현 개선
+  - 지도 HTML과 문서에 반영
+
+- [x] 교육공백 보호군 제외 통폐합 후보모델 추가
+  - 신규 파일: `src/models/train_consolidation_candidate_classifier.py`
+  - 보호군 조건: 5km 내 같은 학교급 없음, 가까운 같은 학교급 5km 초과, 고립도 높고 대체학교 없음
+  - 신규 리포트: `outputs/reports/consolidation_candidate_classifier_metrics.csv`
+  - 신규 문서: `docs/feature_variables/교육공백_보호군_후보모델_실험.md`
+
+- [x] 최종 runner에 보호군 후보모델 단계 추가
+  - 수정 파일: `src/run_final_pipeline.py`
+
+## 6차 최종 산식 평가 개선 TODO
+
+- [x] 중간 EDSS 분류모델 평가와 최종 위험등급 산식 평가를 분리
+  - 기존 EDSS 분류모델 성능은 보조모델 평가로 유지
+  - 최종 산식 자체는 별도 backtest로 평가
+
+- [x] 최종 위험등급 산식 backtest 추가
+  - 신규 파일: `src/reports/evaluate_final_policy_backtest.py`
+  - 평가 기준: 2016~2018 EDSS 기준연도, 5년 뒤 학교ID 소멸 여부
+  - 결과: `outputs/reports/final_policy_backtest_metrics.csv`
+
+- [x] 중간 모델 vs 최종 산식 평가 비교 리포트 추가
+  - 결과: `outputs/reports/final_policy_vs_intermediate_classifier_comparison.csv`
+
+- [x] 최종 위험 피처 기반 시간검증 모델 추가
+  - 학습: 2009~2020
+  - 검증: 2021~2022
+  - 타깃: 다음 해 EDSS 학교ID 소멸 여부
+  - 결과: `outputs/reports/final_feature_temporal_classifier_metrics.csv`
+  - 주의: EDSS 학교 패널이 2023년까지라 2021~2025 전체 검증은 현재 불가
+

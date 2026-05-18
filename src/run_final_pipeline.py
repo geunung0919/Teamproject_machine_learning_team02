@@ -11,26 +11,27 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 FINAL_STEPS = [
-    ("Train EDSS proxy model", "src/model_edss_closure_risk_national.py"),
-    ("Build school-radius commercial features", "src/build_school_radius_commercial_features.py"),
-    ("Build final national regression and risk scenario", "src/final_national_training_pipeline.py"),
-    ("Apply supervised auxiliary percentile", "src/final_supervised_training.py"),
-    ("Analyze risk threshold sensitivity", "src/analyze_risk_threshold_sensitivity.py"),
-    ("Build school-level cohort scenario", "src/build_school_level_cohort_scenario.py"),
-    ("Apply cohort baseline to final risk scenario", "src/apply_cohort_scenario_to_risk.py"),
-    ("Generate model vs cohort comparison chart", "src/generate_comparison_chart.py"),
-    ("Generate base vs tuned model comparison visuals", "src/generate_model_comparison_visuals.py"),
-    ("Extract feature importance", "src/extract_model_feature_importance.py"),
-    ("Analyze fertility pathway", "src/fertility_pathway_analysis.py"),
-    ("Build final interactive HTML map", "src/build_final_interactive_school_risk_map.py"),
+    ("Train EDSS proxy model", "src/models/model_edss_closure_risk_national.py"),
+    ("Build school-radius commercial features", "src/features/build_school_radius_commercial_features.py"),
+    ("Build final national regression and risk scenario", "src/models/final_national_training_pipeline.py"),
+    ("Build modeling master dataset", "src/features/build_modeling_master_dataset.py"),
+    ("Train temporal EDSS closure classifier", "src/models/train_temporal_closure_classifier.py"),
+    ("Analyze risk threshold sensitivity", "src/reports/analyze_risk_threshold_sensitivity.py"),
+    ("Build school-level cohort scenario", "src/models/build_school_level_cohort_scenario.py"),
+    ("Apply cohort baseline to final risk scenario", "src/models/apply_cohort_scenario_to_risk.py"),
+    ("Generate model vs cohort comparison chart", "src/reports/generate_comparison_chart.py"),
+    ("Generate base vs tuned model comparison visuals", "src/reports/generate_model_comparison_visuals.py"),
+    ("Extract feature importance", "src/reports/extract_model_feature_importance.py"),
+    ("Analyze fertility pathway", "src/reports/fertility_pathway_analysis.py"),
+    ("Build final interactive HTML map", "src/viz/build_final_interactive_school_risk_map.py"),
 ]
 
 COLLECT_STEPS = [
-    ("Collect KOSIS population data", "src/collect_national_kosis_population.py"),
-    ("Collect KOSIS birth and migration data", "src/collect_national_kosis_birth_migration.py"),
-    ("Collect KOSIS fertility data", "src/collect_national_kosis_fertility.py"),
-    ("Collect and summarize national commercial data", "src/collect_national_small_shop.py"),
-    ("Collect EduInfo school and closure data", "src/collect_eduinfo_data.py"),
+    ("Collect KOSIS population data", "src/api/collect_national_kosis_population.py"),
+    ("Collect KOSIS birth and migration data", "src/api/collect_national_kosis_birth_migration.py"),
+    ("Collect KOSIS fertility data", "src/api/collect_national_kosis_fertility.py"),
+    ("Collect and summarize national commercial data", "src/api/collect_national_small_shop.py"),
+    ("Collect EduInfo school and closure data", "src/api/collect_eduinfo_data.py"),
 ]
 
 

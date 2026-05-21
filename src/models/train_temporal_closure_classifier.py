@@ -47,6 +47,31 @@ SIDO_CODE_TO_NAME = {
     "50": "제주",
 }
 
+SERVING_COMPATIBLE_FEATURE_COLS = [
+    "sido_name",
+    "학제명",
+    "설립구분명",
+    "student_count",
+    "students_per_class",
+    "students_per_teacher",
+    "student_growth_1yr",
+    "birth_count",
+    "avg_total_fertility_rate",
+    "avg_birth_count_yoy_rate",
+]
+
+EXCLUDED_SKEW_PRONE_FEATURES = [
+    "net_migration_total",
+    "in_migration_total",
+    "out_migration_total",
+    "commercial_count",
+    "education_business_count",
+    "kids_business_count",
+    "commercial_per_birth",
+    "education_per_birth",
+    "net_migration_per_birth",
+]
+
 
 def load_panel_with_next_year_label() -> pd.DataFrame:
     panel = pd.read_csv(PROCESSED / "edss_national_school_panel_2009_2023.csv", low_memory=False)
@@ -194,34 +219,14 @@ def main() -> int:
     train[target] = train[target].astype(int)
     test[target] = test[target].astype(int)
 
-    feature_cols = [
-        "sido_name",
-        "학제명",
-        "설립구분명",
-        "student_count",
-        "students_per_class",
-        "students_per_teacher",
-        "student_growth_1yr",
-        "birth_count",
-        "avg_total_fertility_rate",
-        "avg_birth_count_yoy_rate",
-        "net_migration_total",
-        "in_migration_total",
-        "out_migration_total",
-        "commercial_count",
-        "education_business_count",
-        "kids_business_count",
-        "commercial_per_birth",
-        "education_per_birth",
-        "net_migration_per_birth",
-    ]
+    feature_cols = SERVING_COMPATIBLE_FEATURE_COLS
     models = {
         "base_logistic_temporal_closure": LogisticRegression(class_weight="balanced", max_iter=1200, random_state=42),
         "tuned_histgb_temporal_closure": HistGradientBoostingClassifier(
-            learning_rate=0.045,
-            max_iter=260,
-            max_leaf_nodes=27,
-            l2_regularization=0.12,
+            learning_rate=0.08,
+            max_iter=180,
+            max_leaf_nodes=63,
+            l2_regularization=0.05,
             random_state=42,
             class_weight="balanced",
         ),
@@ -236,7 +241,20 @@ def main() -> int:
         fitted[name] = pipe
 
     metrics = pd.DataFrame(rows).sort_values("f1", ascending=False)
+    metrics["feature_set"] = "serving_compatible"
+    metrics["feature_count"] = len(feature_cols)
+    metrics["excluded_skew_prone_features"] = ", ".join(EXCLUDED_SKEW_PRONE_FEATURES)
     metrics.to_csv(REPORTS / "temporal_closure_classifier_metrics.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(
+        [
+            {
+                "feature_set": "serving_compatible",
+                "used_features": ", ".join(feature_cols),
+                "excluded_skew_prone_features": ", ".join(EXCLUDED_SKEW_PRONE_FEATURES),
+                "reason": "실제 현재 학교 예측/서빙에서 안정적으로 확보 가능한 피처 중심으로 제한해 학습-추론 불일치를 줄인다.",
+            }
+        ]
+    ).to_csv(REPORTS / "temporal_closure_feature_set_report.csv", index=False, encoding="utf-8-sig")
     pd.concat(predictions, ignore_index=True).to_csv(
         REPORTS / "temporal_closure_classifier_predictions.csv", index=False, encoding="utf-8-sig"
     )

@@ -5,3 +5,6 @@ folium==0.20.0
 matplotlib==3.10.9
 joblib==1.5.3
 requests==2.34.2
+streamlit==1.52.1
+streamlit-folium==0.26.0
+pytest==9.0.1

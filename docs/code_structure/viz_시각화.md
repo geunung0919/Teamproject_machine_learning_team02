@@ -1,7 +1,7 @@
 ﻿# 시각화 코드
 
 `src/viz`는 최종 HTML 지도를 만드는 폴더다.  
-현재 핵심 파일은 `build_final_interactive_school_risk_map.py` 하나다.
+현재 핵심 파일은 최종 HTML 생성용 `build_final_interactive_school_risk_map.py`와 정책 가중치 실험용 `streamlit_policy_simulator.py`다.
 
 ## 파일별 역할
 
@@ -26,6 +26,24 @@ outputs/maps/final_school_risk_data/
 - `make_help_payload()`: 팝업 도움말 문구를 JSON으로 만든다.
 - `make_cohort_payload()`: 그래프 탭에서 쓸 코호트 시나리오 집계 데이터를 만든다.
 - `main()`: 좌표 품질 리포트, 지역별 지도 데이터, 최종 HTML을 생성한다.
+
+### `streamlit_policy_simulator.py`
+
+정책 가중치를 사용자가 직접 조절해 위험등급 변화를 확인하는 Streamlit what-if 대시보드다.  
+최종 발표용 HTML을 대체하는 파일이 아니라, 이해관계자용 정책 시뮬레이션 보조 앱이다.
+
+실행:
+
+```powershell
+streamlit run src/viz/streamlit_policy_simulator.py
+```
+
+주요 함수:
+
+- `load_scenario()`: 최종 학교별 시나리오 CSV를 읽고 유효 좌표만 남긴다.
+- `weighted_score(df, weights)`: 슬라이더 가중치 기준으로 위험점수를 재계산한다.
+- `apply_policy(df, weights)`: 재계산한 점수로 위험등급을 다시 부여한다.
+- `build_map(df)`: 현재 필터/가중치 기준 학교 점 지도를 만든다.
 
 ## 지도 UI 기능
 

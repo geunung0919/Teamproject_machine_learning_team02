@@ -589,17 +589,18 @@ def main() -> int:
           <div class="card-item base">
             <div class="card-tag">베이스</div>
             <div class="card-name">Logistic</div>
-            <div class="card-metric">F1 0.688</div>
+            <div class="card-metric">F1 0.706</div>
+            <div class="card-badge">F1 소폭 우수</div>
           </div>
           <div class="card-vs">vs</div>
           <div class="card-item tuned">
             <div class="card-tag">튜닝</div>
             <div class="card-name">HistGB</div>
             <div class="card-metric">F1 0.702</div>
-            <div class="card-badge">PR-AUC 우수</div>
+            <div class="card-badge">ROC/PR-AUC 우수</div>
           </div>
         </div>
-        <div class="card-note">2009~2018 학습, 2019~2022 EDSS 학교ID 다음 해 소멸 여부로 검증했습니다.</div>
+        <div class="card-note">2009~2018 학습, 2019~2022 EDSS 학교ID 다음 해 소멸 여부로 검증했습니다. F1은 Logistic이 소폭 높고, HistGB는 ROC-AUC 0.983 / PR-AUC 0.725로 위험 후보 랭킹에 강합니다.</div>
       </div>
     </div>
     <div class="graph-controls">

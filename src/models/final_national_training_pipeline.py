@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from pathlib import Path
 import sys
@@ -863,6 +863,42 @@ def main() -> int:
         PROCESSED / "final_national_school_scenario_change_model_2026_2040.csv",
     )
     scenario = build_final_school_scenario(schools, sgg_forecast)
+    # 최종 룰 수식을 100% 진짜 머신러닝 예측값(tuned_histgb_policy_multiclass_classifier)으로 대체
+    from models.train_policy_multiclass_classifier import train_policy_multiclass_model
+    policy_model = train_policy_multiclass_model()
+    policy_le = joblib.load(MODELS / "policy_multiclass_label_encoder.pkl")
+    feature_cols = [
+        "requested_sido_name",
+        "school_level",
+        "foundation",
+        "student_count_2025",
+        "forecast_student_count",
+        "population_pressure_ratio",
+        "school_isolation_score",
+        "commercial_vulnerability_score",
+        "regional_decline_risk_score",
+        "objective_closure_percentile",
+        "nearest_same_level_school_km",
+        "same_level_school_count_5km",
+        "risk_score"
+    ]
+
+    # 기본 시나리오 ML 예측 적용
+    scenario_clean = scenario[scenario["school_level"].isin(["초등학교", "중학교", "고등학교"])].copy()
+    pred_encoded = policy_model.predict(scenario_clean[feature_cols])
+    scenario_clean["risk_label"] = policy_le.inverse_transform(pred_encoded)
+    scenario_clean.to_csv(PROCESSED / "final_national_school_scenario_2026_2040.csv", index=False, encoding="utf-8-sig")
+    scenario = scenario_clean
+
+    # 변화량 시나리오 ML 예측 적용
+    change_path = PROCESSED / "final_national_school_scenario_change_model_2026_2040.csv"
+    if change_path.exists():
+        change_scenario = pd.read_csv(change_path, low_memory=False)
+        change_clean = change_scenario[change_scenario["school_level"].isin(["초등학교", "중학교", "고등학교"])].copy()
+        pred_change = policy_model.predict(change_clean[feature_cols])
+        change_clean["risk_label"] = policy_le.inverse_transform(pred_change)
+        change_clean.to_csv(change_path, index=False, encoding="utf-8-sig")
+
     train_objective_classifier_with_context()
 
     summary = (

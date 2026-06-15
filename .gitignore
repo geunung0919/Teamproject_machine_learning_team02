@@ -1,0 +1,55 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+.next/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+*.old
+*.zip
+
+# Archives and local handoff
+_archive_before_github/
+handoff_for_chatgpt/
+GITHUB_RELEASE_AUDIT/
+
+# Raw/private data
+data/raw/
+data/interim/
+data/cache/
+data/private/
+
+# Secrets
+*secret*
+*token*
+*apikey*
+*api_key*

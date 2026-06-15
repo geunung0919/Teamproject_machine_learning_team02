@@ -1,0 +1,5 @@
+﻿item,row_count,coverage_note,status
+final_scenario_school_web,10454,P1 modeled school layer with tuned HistGB predictions,PASS
+final_scenario_school_year_long,62724,2025 observed plus 2026-2030 predicted years,PASS
+excluded_school_web,2173,Excluded/event display layer preserved from v2 schema,PASS
+summary_national_by_year,6,National P1 modeled-school totals by year,PASS

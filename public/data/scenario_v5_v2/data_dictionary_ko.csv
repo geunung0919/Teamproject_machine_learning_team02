@@ -1,0 +1,77 @@
+﻿column_name,korean_label,description_ko,dtype,example,web_usage
+school_key,school_key,웹 시각화 및 발표용 최종 시나리오 컬럼,str,경북|영덕군|초등학교|영덕야성초등학교|본교,map/detail/ranking/filter
+school_name,school_name,웹 시각화 및 발표용 최종 시나리오 컬럼,str,영덕야성초등학교,map/detail/ranking/filter
+sido,sido,웹 시각화 및 발표용 최종 시나리오 컬럼,str,경북,map/detail/ranking/filter
+sgg,sgg,웹 시각화 및 발표용 최종 시나리오 컬럼,str,영덕군,map/detail/ranking/filter
+school_level,school_level,웹 시각화 및 발표용 최종 시나리오 컬럼,str,초등학교,map/detail/ranking/filter
+school_status_2025,school_status_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,str,기존(원)교,map/detail/ranking/filter
+latitude,latitude,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,36.4132047,map/detail/ranking/filter
+longitude,longitude,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,129.3689883,map/detail/ranking/filter
+coordinate_valid,coordinate_valid,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,True,map/detail/ranking/filter
+coordinate_source,coordinate_source,웹 시각화 및 발표용 최종 시나리오 컬럼,str,eduinfo_current_match,map/detail/ranking/filter
+coordinate_quality_flag,coordinate_quality_flag,웹 시각화 및 발표용 최종 시나리오 컬럼,object,valid,map/detail/ranking/filter
+student_count_2025,student_count_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,457.0,map/detail/ranking/filter
+pred_student_count_2026,pred_student_count_2026,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,428.5481701427699,map/detail/ranking/filter
+pred_student_count_2027,pred_student_count_2027,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,404.2726501902776,map/detail/ranking/filter
+pred_student_count_2028,pred_student_count_2028,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,377.6738428133698,map/detail/ranking/filter
+pred_student_count_2029,pred_student_count_2029,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,344.6762302997374,map/detail/ranking/filter
+pred_student_count_2030,2030 예측 학생수,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,306.6651800038261,map/detail/ranking/filter
+delta_2025_2026,delta_2025_2026,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-28.45182985723011,map/detail/ranking/filter
+delta_2025_2027,delta_2025_2027,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-52.7273498097224,map/detail/ranking/filter
+delta_2025_2028,delta_2025_2028,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-79.32615718663021,map/detail/ranking/filter
+delta_2025_2029,delta_2025_2029,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-112.32376970026257,map/detail/ranking/filter
+delta_2025_2030,delta_2025_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-150.3348199961739,map/detail/ranking/filter
+pct_change_2025_2026,pct_change_2025_2026,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-0.06225783338562387,map/detail/ranking/filter
+pct_change_2025_2027,pct_change_2025_2027,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-0.11537713306284988,map/detail/ranking/filter
+pct_change_2025_2028,pct_change_2025_2028,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-0.17358021266221052,map/detail/ranking/filter
+pct_change_2025_2029,pct_change_2025_2029,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-0.2457850540487146,map/detail/ranking/filter
+pct_change_2025_2030,pct_change_2025_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,-0.32896021881000853,map/detail/ranking/filter
+class_count_2025,class_count_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,23.0,map/detail/ranking/filter
+teacher_count_2025,teacher_count_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,36.0,map/detail/ranking/filter
+students_per_class_2025,students_per_class_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,19.869565217391305,map/detail/ranking/filter
+students_per_teacher_2025,students_per_teacher_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,12.694444444444445,map/detail/ranking/filter
+isolation_score,고립도 점수,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,6.338318879923122,map/detail/ranking/filter
+nearest_same_level_school_km,nearest_same_level_school_km,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,6.338318879923122,map/detail/ranking/filter
+same_level_school_count_5km,same_level_school_count_5km,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,0.0,map/detail/ranking/filter
+small_school_flag_2025,small_school_flag_2025,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,False,map/detail/ranking/filter
+small_school_flag_2030,small_school_flag_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,False,map/detail/ranking/filter
+decline_pressure_flag_2030,decline_pressure_flag_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,True,map/detail/ranking/filter
+isolated_small_school_flag_2030,isolated_small_school_flag_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,False,map/detail/ranking/filter
+education_gap_risk_flag_2030,education_gap_risk_flag_2030,웹 시각화 및 발표용 최종 시나리오 컬럼,bool,False,map/detail/ranking/filter
+priority_score_2030,2030 우선순위 점수,웹 시각화 및 발표용 최종 시나리오 컬럼,float64,84.14627755812634,map/detail/ranking/filter
+priority_rank_national,priority_rank_national,웹 시각화 및 발표용 최종 시나리오 컬럼,int64,1,map/detail/ranking/filter
+priority_rank_sido,priority_rank_sido,웹 시각화 및 발표용 최종 시나리오 컬럼,int64,1,map/detail/ranking/filter
+priority_rank_sgg,priority_rank_sgg,웹 시각화 및 발표용 최종 시나리오 컬럼,int64,1,map/detail/ranking/filter
+scenario_model_name,scenario_model_name,웹 시각화 및 발표용 최종 시나리오 컬럼,str,R3_multioutput_1to5_incremental_delta_RandomForestRegressor,map/detail/ranking/filter
+scenario_type,scenario_type,웹 시각화 및 발표용 최종 시나리오 컬럼,str,decline_pressure_scenario,map/detail/ranking/filter
+scenario_note,scenario_note,웹 시각화 및 발표용 최종 시나리오 컬럼,str,폐교 확정 예측이 아니라 2026~2030 학생 수 감소 압력과 행정 검토 우선순위를 보여주는 시나리오입니다. 학교별 파일은 P1 안정 학교 기준이며 event layer는 총합 검증에 aggregate로 포함됩니다.,map/detail/ranking/filter
+school_key,학교 고유키,학교를 식별하는 V5 기준 고유키,str,강원|강릉시|초등학교|경포초등학교|본교,map/detail/filter/audit; excluded_layer
+school_name,학교명,학교 이름,str,경포초등학교,map/detail/filter/audit; excluded_layer
+sido,시도,시도명,str,강원,map/detail/filter/audit; excluded_layer
+sgg,시군구,시군구명,str,강릉시,map/detail/filter/audit; excluded_layer
+school_level,학교급,초등학교/중학교/고등학교 등 학교급,str,초등학교,map/detail/filter/audit; excluded_layer
+school_status_2025,2025 학교 상태,2025년 원천 데이터에서 확인되는 학교 상태,str,기존(원)교,map/detail/filter/audit; excluded_layer
+latitude,위도,지도 표시용 위도. 결측이면 임의 생성하지 않음,float64,37.7700966,map/detail/filter/audit; excluded_layer
+longitude,경도,지도 표시용 경도. 결측이면 임의 생성하지 않음,float64,128.8796813,map/detail/filter/audit; excluded_layer
+coordinate_valid,좌표 유효 여부,대한민국 대략 범위 기준 좌표 유효성,bool,True,map/detail/filter/audit; excluded_layer
+coordinate_source,좌표 출처,좌표가 조인된 원천 또는 출처 정보,str,eduinfo_current_match,map/detail/filter/audit; excluded_layer
+coordinate_quality_flag,좌표 품질 플래그,valid/missing_coordinate/out_of_korea_bounds,object,valid,map/detail/filter/audit; excluded_layer
+student_count_2025,2025 학생수,2025년 최신 학생 수,float64,338.0,map/detail/filter/audit; excluded_layer
+class_count_2025,2025 학급수,2025년 학급 수,float64,17.0,map/detail/filter/audit; excluded_layer
+teacher_count_2025,2025 교원수,2025년 교원 수,float64,29.0,map/detail/filter/audit; excluded_layer
+students_per_class_2025,2025 학급당 학생수,학생수/학급수 기반 2025 지표,float64,19.88235294117647,map/detail/filter/audit; excluded_layer
+students_per_teacher_2025,2025 교원 1인당 학생수,학생수/교원수 기반 2025 지표,float64,11.655172413793103,map/detail/filter/audit; excluded_layer
+isolation_score,고립도 점수,동일 학교급 주변 학교 접근성을 반영한 고립도 지표,float64,0.0192393200092179,map/detail/filter/audit; excluded_layer
+nearest_same_level_school_km,가장 가까운 동일 학교급 거리,동일 학교급 기준 최근접 학교 거리(km),float64,0.4617436802212298,map/detail/filter/audit; excluded_layer
+same_level_school_count_5km,5km 내 동일 학교급 수,반경 5km 내 동일 학교급 학교 수,float64,23.0,map/detail/filter/audit; excluded_layer
+excluded_from_model,학습 대상 제외 여부,안정학교 모델 학습/예측 대상 제외 여부,bool,True,map/detail/filter/audit; excluded_layer
+exclusion_reason,제외 사유,P1 정책에서 제외된 원천 사유,str,event/anomaly candidate,map/detail/filter/audit; excluded_layer
+event_layer_category,event/anomaly 유형,웹 표시용 정규화된 이벤트/이상 유형,str,rapid_student_decrease,map/detail/filter/audit; excluded_layer
+modeling_layer,모델링 계층,excluded_event_anomaly 레이어 구분값,str,excluded_event_anomaly,map/detail/filter/audit; excluded_layer
+has_prediction,예측값 보유 여부,이 레이어는 학교별 2026~2030 예측값을 갖지 않음,bool,False,map/detail/filter/audit; excluded_layer
+display_label,화면 표시 라벨,웹 지도/목록에서 보여줄 짧은 라벨,str,학습 대상 제외,map/detail/filter/audit; excluded_layer
+display_description,화면 표시 설명,상세 패널에 보여줄 한국어 설명,str,학생 수가 급격히 감소한 이력이 있어 안정 기존학교 감소압력 모델의 학습/예측 대상에서 제외되었습니다. 이는 행정 상태 확정 예측이 아닙니다.,map/detail/filter/audit; excluded_layer
+web_marker_type,지도 마커 유형,웹 지도에서 excluded event/anomaly로 표시하기 위한 유형,str,excluded_event_anomaly,map/detail/filter/audit; excluded_layer
+web_marker_priority,지도 마커 우선순위,웹 표시 정렬 또는 강조를 위한 우선순위,int64,75,map/detail/filter/audit; excluded_layer
+source_file,원천 파일,해당 row가 만들어진 원천 파일,str,data\v5_p1_excluded_school_list_v1\p1_excluded_schools_2173.csv,map/detail/filter/audit; excluded_layer
+source_row_id,원천 row ID,원천 파일 내 행 번호,int64,0,map/detail/filter/audit; excluded_layer

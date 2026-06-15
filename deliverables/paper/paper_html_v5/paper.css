@@ -1,0 +1,272 @@
+/* paper.css - 학술 논문 스타일 CSS v5 (최종 2페이지 최적화) */
+
+@page {
+  size: A4;
+  margin: 15mm 14mm;
+}
+
+body {
+  margin: 0;
+  background: #eee;
+}
+
+.paper {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 16mm 15mm;
+  background: #fff;
+  box-sizing: border-box;
+  font-family: "Batang", "Nanum Myeongjo", "Times New Roman", serif;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom: 1px double #888;
+  padding-bottom: 8px;
+}
+
+.title-ko {
+  font-size: 15.5pt;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title-en {
+  font-size: 10.8pt;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+}
+
+.authors,
+.affiliation,
+.email {
+  font-size: 8.8pt;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.email {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.abstract {
+  padding: 9px 16px;
+  margin: 12px 0 14px;
+  border: 1px solid #d2d2d2;
+  background: #fafafa;
+}
+
+.abstract h2 {
+  font-size: 11pt;
+  margin: 0 0 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.abstract p {
+  font-size: 9.2pt;
+  line-height: 1.48;
+  margin: 0 0 5px;
+  text-align: justify;
+  text-indent: 10px;
+}
+
+.keywords {
+  font-size: 8.8pt;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+.keywords span {
+  font-weight: normal;
+}
+
+.paper-body {
+  column-count: 2;
+  column-gap: 23px;
+  column-fill: balance;
+  font-size: 9.45pt;
+  line-height: 1.5;
+}
+
+.paper-body h2 {
+  font-size: 12.5pt;
+  margin: 11px 0 5px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2px;
+  break-after: avoid;
+}
+
+.paper-body h3 {
+  font-size: 10.3pt;
+  margin: 8px 0 4px;
+  font-weight: bold;
+  break-after: avoid;
+}
+
+.paper-body p {
+  margin: 0 0 5px;
+  text-align: justify;
+  text-indent: 10pt;
+}
+
+.paper-body strong {
+  font-weight: bold;
+}
+
+.paper-body ul {
+  margin: 3px 0 5px 14px;
+  padding: 0;
+}
+
+.paper-body li {
+  margin-bottom: 2px;
+}
+
+/* 기본 figure 스타일 */
+figure {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 8px 0 12px;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  max-height: 54mm;
+  object-fit: contain;
+}
+
+figcaption {
+  margin-top: 4px;
+  font-size: 9pt;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* R-stage 이미지 세부 제한 */
+.figure-rstage img {
+  max-height: 42mm;
+}
+
+/* 모델 성능 그래프 세부 제한 */
+.figure-performance img {
+  max-height: 58mm;
+}
+
+/* 웹 대시보드 대표 화면 스타일 */
+.figure-web {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 8px 0 12px;
+  text-align: center;
+}
+
+.figure-web img {
+  width: 100%;
+  max-height: 58mm;
+  object-fit: contain;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+}
+
+.figure-web figcaption {
+  margin-top: 4px;
+  font-size: 9pt;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 코드 스타일 */
+code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-size: 8.2pt;
+  font-weight: bold;
+}
+
+/* 감사의 글 스타일 */
+.acknowledgement {
+  margin-top: 12px;
+  padding-top: 6px;
+  border-top: 1px dashed #bbb;
+  break-inside: avoid;
+}
+
+.acknowledgement h2 {
+  border-bottom: none;
+  font-size: 10pt;
+  margin: 8px 0 3px;
+  font-weight: bold;
+}
+
+.acknowledgement p {
+  font-size: 8.8pt;
+  line-height: 1.4;
+  margin: 0;
+  text-indent: 0;
+}
+
+/* 참고문헌 스타일 */
+.references {
+  margin-top: 12px;
+  break-inside: avoid;
+  font-size: 8.5pt;
+  line-height: 1.35;
+}
+
+.references h2 {
+  border-bottom: none;
+  font-size: 10pt;
+  margin: 8px 0 3px;
+  font-weight: bold;
+}
+
+.references ol {
+  padding-left: 14px;
+  margin: 3px 0;
+}
+
+.references li {
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .paper {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .paper-body {
+    column-count: 2;
+    column-gap: 22px;
+  }
+
+  figure,
+  .figure-web {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

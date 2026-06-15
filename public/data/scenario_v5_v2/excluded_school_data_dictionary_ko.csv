@@ -1,0 +1,31 @@
+﻿column_name,korean_label,description_ko,dtype,example,web_usage
+school_key,학교 고유키,학교를 식별하는 V5 기준 고유키,str,강원|강릉시|초등학교|경포초등학교|본교,map/detail/filter/audit
+school_name,학교명,학교 이름,str,경포초등학교,map/detail/filter/audit
+sido,시도,시도명,str,강원,map/detail/filter/audit
+sgg,시군구,시군구명,str,강릉시,map/detail/filter/audit
+school_level,학교급,초등학교/중학교/고등학교 등 학교급,str,초등학교,map/detail/filter/audit
+school_status_2025,2025 학교 상태,2025년 원천 데이터에서 확인되는 학교 상태,str,기존(원)교,map/detail/filter/audit
+latitude,위도,지도 표시용 위도. 결측이면 임의 생성하지 않음,float64,37.7700966,map/detail/filter/audit
+longitude,경도,지도 표시용 경도. 결측이면 임의 생성하지 않음,float64,128.8796813,map/detail/filter/audit
+coordinate_valid,좌표 유효 여부,대한민국 대략 범위 기준 좌표 유효성,bool,True,map/detail/filter/audit
+coordinate_source,좌표 출처,좌표가 조인된 원천 또는 출처 정보,str,eduinfo_current_match,map/detail/filter/audit
+coordinate_quality_flag,좌표 품질 플래그,valid/missing_coordinate/out_of_korea_bounds,object,valid,map/detail/filter/audit
+student_count_2025,2025 학생수,2025년 최신 학생 수,float64,338.0,map/detail/filter/audit
+class_count_2025,2025 학급수,2025년 학급 수,float64,17.0,map/detail/filter/audit
+teacher_count_2025,2025 교원수,2025년 교원 수,float64,29.0,map/detail/filter/audit
+students_per_class_2025,2025 학급당 학생수,학생수/학급수 기반 2025 지표,float64,19.88235294117647,map/detail/filter/audit
+students_per_teacher_2025,2025 교원 1인당 학생수,학생수/교원수 기반 2025 지표,float64,11.655172413793103,map/detail/filter/audit
+isolation_score,고립도 점수,동일 학교급 주변 학교 접근성을 반영한 고립도 지표,float64,0.0192393200092179,map/detail/filter/audit
+nearest_same_level_school_km,가장 가까운 동일 학교급 거리,동일 학교급 기준 최근접 학교 거리(km),float64,0.4617436802212298,map/detail/filter/audit
+same_level_school_count_5km,5km 내 동일 학교급 수,반경 5km 내 동일 학교급 학교 수,float64,23.0,map/detail/filter/audit
+excluded_from_model,학습 대상 제외 여부,안정학교 모델 학습/예측 대상 제외 여부,bool,True,map/detail/filter/audit
+exclusion_reason,제외 사유,P1 정책에서 제외된 원천 사유,str,event/anomaly candidate,map/detail/filter/audit
+event_layer_category,event/anomaly 유형,웹 표시용 정규화된 이벤트/이상 유형,str,rapid_student_decrease,map/detail/filter/audit
+modeling_layer,모델링 계층,excluded_event_anomaly 레이어 구분값,str,excluded_event_anomaly,map/detail/filter/audit
+has_prediction,예측값 보유 여부,이 레이어는 학교별 2026~2030 예측값을 갖지 않음,bool,False,map/detail/filter/audit
+display_label,화면 표시 라벨,웹 지도/목록에서 보여줄 짧은 라벨,str,학습 대상 제외,map/detail/filter/audit
+display_description,화면 표시 설명,상세 패널에 보여줄 한국어 설명,str,학생 수가 급격히 감소한 이력이 있어 안정 기존학교 감소압력 모델의 학습/예측 대상에서 제외되었습니다. 이는 행정 상태 확정 예측이 아닙니다.,map/detail/filter/audit
+web_marker_type,지도 마커 유형,웹 지도에서 excluded event/anomaly로 표시하기 위한 유형,str,excluded_event_anomaly,map/detail/filter/audit
+web_marker_priority,지도 마커 우선순위,웹 표시 정렬 또는 강조를 위한 우선순위,int64,75,map/detail/filter/audit
+source_file,원천 파일,해당 row가 만들어진 원천 파일,str,data\v5_p1_excluded_school_list_v1\p1_excluded_schools_2173.csv,map/detail/filter/audit
+source_row_id,원천 row ID,원천 파일 내 행 번호,int64,0,map/detail/filter/audit

@@ -1,0 +1,4 @@
+﻿metric,value,status
+excluded_school_count,2173,PASS
+excluded_year_long_rows,2173,PASS
+has_prediction_true_count,0,PASS

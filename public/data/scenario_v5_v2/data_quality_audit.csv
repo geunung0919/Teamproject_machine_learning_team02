@@ -1,0 +1,7 @@
+﻿check,value,status
+final_school_rows,10454,PASS
+p1_prediction_rows,10454,PASS
+excluded_school_rows,2173,PASS
+coordinate_valid_rows,10453,PASS
+negative_prediction_count,0,PASS
+scenario_years,"2026,2027,2028,2029,2030",PASS
